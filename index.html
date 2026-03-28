@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consulenza Strategica — Alessio Caruso Immobiliare</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G2SMJ66X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5G2SMJ66X2');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -266,7 +274,7 @@ content: '';
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 4px;
-background: var(--blue);
+background: #16a34a;
 }
 
 .perchi-card.no::before {
@@ -274,11 +282,14 @@ content: '';
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 4px;
-background: #e0d5c8;
+background: #dc2626;
 }
 
+.perchi-card.si { background: #f0fdf4; border-color: #86efac; }
+.perchi-card.no { background: #fff5f5; border-color: #fca5a5; }
+
 .perchi-card h3 {
-font-family: 'Playfair Display', serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 1.05rem;
 font-weight: 700;
 margin-bottom: 20px;
@@ -287,8 +298,8 @@ align-items: center;
 gap: 10px;
 }
 
-.perchi-card.si h3 { color: var(--blue); }
-.perchi-card.no h3 { color: var(--text-light); }
+.perchi-card.si h3 { color: #16a34a; }
+.perchi-card.no h3 { color: #dc2626; }
 
 .perchi-list {
 list-style: none;
@@ -302,12 +313,13 @@ display: flex;
 align-items: flex-start;
 gap: 12px;
 font-size: 0.9rem;
+font-family: 'DM Sans', sans-serif;
 color: var(--text-mid);
 line-height: 1.5;
 }
 
-.perchi-card.si .perchi-list li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-.perchi-card.no .perchi-list li::before { content: '✕'; color: #bbb; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.perchi-card.si .perchi-list li::before { content: '✓'; color: #16a34a; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.perchi-card.no .perchi-list li::before { content: '✕'; color: #dc2626; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
 /* COME FUNZIONA */
 .funziona-section { background: var(--cream); }
@@ -477,12 +489,18 @@ font-size: 2.6rem;
 font-weight: 900;
 color: #fff;
 line-height: 1;
+display: flex;
+align-items: center;
+gap: 2px;
 }
 
 .price-amount sup {
-font-size: 1.1rem;
-vertical-align: super;
-color: rgba(255,255,255,0.6);
+font-size: 1.4rem;
+font-weight: 900;
+color: rgba(255,255,255,0.8);
+vertical-align: baseline;
+position: static;
+line-height: 1;
 }
 
 .pacchetto.featured .price-amount { color: var(--orange); }
@@ -825,15 +843,14 @@ transition: opacity 0.65s ease, transform 0.65s ease;
 </section>
 
 <!-- PROOF BAR -->
-<div class="proof-bar">
-  <div class="proof-item"><span class="icon">⭐</span><span><strong>34 recensioni</strong> su Google</span></div>
-  <div class="proof-item"><span class="icon">🏠</span><span><strong>70+ transazioni</strong> gestite</span></div>
-  <div class="proof-item"><span class="icon">💶</span><span><strong>8M€+</strong> compravenduti</span></div>
-  <div class="proof-item"><span class="icon">📍</span><span><strong>Consulenza</strong> in tutta Italia</span></div>
+<div class="proof-bar" style="padding: 20px 6vw; border-bottom: 1px solid var(--border);">
+  <p style="font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 700; color: var(--blue-dark); text-align: center; width: 100%;">
+    Consulenza in tutta Italia
+  </p>
 </div>
 
 <!-- PER CHI È -->
-<section class="perchi-section fade-in">
+<section class="perchi-section fade-in" style="padding-top: 48px;">
   <div class="section-label">Prima di prenotare</div>
   <h2 class="section-title">È la consulenza giusta <em>per te?</em></h2>
   <p class="section-intro">Lavoro con chi è disposto a ragionare sulla propria situazione con apertura. Non è una valutazione generica — è un lavoro su misura.</p>
@@ -881,7 +898,7 @@ transition: opacity 0.65s ease, transform 0.65s ease;
     <div class="step-card">
       <div class="step-num">3</div>
       <span class="step-tag">Il momento chiave</span>
-      <h3>Prenota ora</h3>
+      <h3>Consulenza Strategica</h3>
       <p>Analizziamo la tua situazione specifica — prezzo, documenti, mercato locale — e costruiamo insieme la strategia giusta per te.</p>
     </div>
   </div>
@@ -890,7 +907,7 @@ transition: opacity 0.65s ease, transform 0.65s ease;
 <!-- PACCHETTI -->
 <section class="pacchetti-section fade-in" id="pacchetti">
   <div class="section-label">Scegli il tuo pacchetto</div>
-  <h2 class="section-title">Tre livelli di <em>supporto</em></h2>
+  <h2 class="section-title">Tre livelli di <em style="color: var(--orange);">supporto</em></h2>
   <p class="section-intro">Scegli in base alla complessità della tua situazione. Puoi sempre aggiornare dopo la prima call.</p>
 
   <div class="pacchetti-grid">
@@ -932,7 +949,6 @@ transition: opacity 0.65s ease, transform 0.65s ease;
         <div class="feature-item">Analisi della situazione</div>
         <div class="feature-item">Analisi delle criticità</div>
         <div class="feature-item">Strategia personalizzata</div>
-        <div class="feature-item">💬 Supporto WhatsApp continuativo incluso</div>
       </div>
       <div class="pacchetto-cta">
         <a href="#" class="btn-pacchetto filled">Prenota — 149€</a>
